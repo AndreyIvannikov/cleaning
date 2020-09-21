@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <title>Cleaning</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__contacts">
+        <div class="container">
+            <a class="menu__logo"><img src="./dist/img/photo.jpg" alt="Клининговая компания"></a>
+            <div class="contacts header__contacts-wrapper">
+                <a class="contacts__city contacts__menu--link menu__contacts-link--city"
+                   aria-label="Мы работаем в городе Самара">г.Самара</a>
+                <a href="tel:+79277382691" aria-label="Наш телефон"
+                   class="contacts__phone contacts__menu--link menu__contacts-link--phone">
+                    +7 (927)-738-26-91
+                </a>
+            </div>
+        </div>
+    </div>
+    <nav class="menu" role="navigation">
+        <div class="container">
+            <ul class="menu__list" role="menubar">
+                <li class="menu__item" role="menuitem"><a aria-label="Перейти к разделу Поддерживающая уборка"
+                                                          href="#work">Поддерживающая уборка</a></li>
+                <li class="menu__item" role="menuitem"><a aria-label="Перейти к разделу Генеральная уборка"
+                                                          href="#general">Генеральная уборка</a></li>
+                <li class="menu__item" role="menuitem"><a aria-label="Перейти к разделу Мытье окон"
+                                                          class="menu__link--window" href="#window">Мытье окон</a>
+                    <a href="#faq">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="main">
+    <section class="services">
+        <div class="container">
+            <h1 class="services__title">
+                Клининговые услуги <br> в самаре
+            </h1>
+
+            <form class="form form-one" action="mail.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="project_name" value="Cleaning">
+                <input type="hidden" name="admin_email" value="info@livecleaning.ru">
+                <input type="hidden" name="form_subject" value="Form Subject">
+                <fieldset>
+                    <legend class="form-select__title">Закажите уборку квартиры в Самаре</legend>
+                    <div>
+                        <label for="tel1" class="form__select-label">Укажите номер телефона:</label>
+                        <input id="tel1" class="form-select__inp form__select" name="tel" type="tel"
+                               required
+                               placeholder="Например +7(927)3451237">
+                        <div class="contact-form__error contact-form__error_email"></div>
+                    </div>
+                    <div>
+                        <label for="room1" class="visually-hidden">Выберите количество комнат</label>
+                        <select id="room1" name="Комнаты" class="form__select" data-name="room1">
+                            <option value="0">Количество комнат</option>
+                            <option value="1-комнатная" data-calc-value="1490">1-комнатная</option>
+                            <option value="2-комнатная<" data-calc-value="2090">2-комнатная</option>
+                            <option value="3-комнатная<" data-calc-value="2490">3-комнатная</option>
+                            <option value="4-комнатная<" data-calc-value="3090">4-комнатная</option>
+                            <option value="5-комнатная<" data-calc-value="3990">5-комнатная</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="room2" class="visually-hidden">Выберите количество сан-узлов</label>
+                        <select name="Сан-узлы" id="room2" class="form__select" data-name="room2">
+                            <option value="0">Количество сан-узлов</option>
+                            <option value="1 санузел" data-calc-value="0">1-санузел</option>
+                            <option value="2 санузла" data-calc-value="300">2 санузла</option>
+                            <option value="3 санузла" data-calc-value="600">3 санузла</option>
+                            <option value="4 санузла" data-calc-value="900">4 санузла</option>
+                            <option value="5 санузлов" data-calc-value="1200">5 санузла</option>
+                        </select>
+                    </div>
+
+                    <p tabindex="0" aria-label="ваша сумма"  class="form-select__price"> 0 руб. <sup
+                            aria-hidden="true">*</sup></p>
+                </fieldset>
+                <button type="submit" class="services__btn btn"> Заказать уборку</button>
+                <p class="form-select--consent">Я согласен с <a href="">условием передачи данных</a></p>
+            </form>
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="container">
+            <h2 class="visually-hidden">Наши преимущества</h2>
+            <ul class="advantages__list">
+                <li class="advantages__item">
+                    <h3 class="advantages__item-title">Проверенные исполнители</h3>
+                    <p class="advantages__item-text text">Наша команда клинеров <br> состоит из обученных сотруднииков
+                    </p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__item-title">Предоставляем <br> комплекс услуг</h3>
+                    <p class="advantages__item-text text">Даем клиентам на выбор несколько вариантов уборки</p>
+                </li>
+                <li class="advantages__item">
+                    <h3 class="advantages__item-title">Гарантия качества</h3>
+                    <p class="advantages__item-text text">
+                        Мы работаем по строгому регламенту и быстро откликаемся на предложения
+                        и жалобы клиентов
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+        <div class="container">
+            <h2 class="work__title title">Как происходит работа </h2>
+            <p class="work__text text">
+                Клинер приезжает к вам в назначенное время со всем необходимым оборудованием и сразу же
+                приступает к работе. Вам остается только оценить результат</p>
+            <label for="room3" class="visually-hidden">Выберите комнату чтобы показать изоображение</label>
+            <select name="" id="room3" class="form__select work__select">
+                <option value="комната" data-src="dist/img/room.jpg" selected>КОМНАТА</option>
+                <option value="коридор" data-src="dist/img/corridor.jpg">КОРИДОР</option>
+                <option value="кухня" data-src="dist/img/kitchen.jpg">КУХНЯ</option>
+                <option value="ванная" data-src="dist/img/bathroom.jpg">ВАННАЯ</option>
+            </select>
+            <div class="work__btn-wrapper">
+                <button class="work__btn-toggle btn active__btn" data-src="dist/img/room.jpg">КОМНАТА</button>
+                <button class="work__btn-toggle btn" data-src="dist/img/corridor.jpg">КОРИДОР</button>
+                <button class="work__btn-toggle btn" data-src="dist/img/kitchen.jpg">КУХНЯ</button>
+                <button class="work__btn-toggle btn" data-src="dist/img/bathroom.jpg">ВАННАЯ</button>
+            </div>
+
+            <div class="work__img">
+                <div class="work-img__item active"><img src="dist/img/room.jpg" alt="КОМНАТА"></div>
+            </div>
+            <button aria-expanded="false" aria-haspopup="true" class="work__btn modal-btn btn" data-modal="one">полный
+                список
+            </button>
+
+            <!-- The Modal -->
+            <div aria-label="что входит в поддерживающую уборку" id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal__header-title"> LiveCleaning | Что входит в
+                            <span>поддерживающую уборку</span></p>
+                        <button class="close"><span class="visually-hidden">Закрыть окно</span></button>
+                        <p class="text modal__header-text">
+                            Это наш регламент — то, что мы делаем на каждом заказе. Чтобы настроить уборку
+                            под себя, добавьте дополнительные услуги </p>
+                    </div>
+                    <div class="modal__body">
+                        <div class="modal__body-list">
+                            <p class="modal__body-list__title">Во всей квартире</p>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Моем пол и протираем плинтусы
+                            </div>
+
+                            <div class="modal__body-item item-before modal__body-item--yes modal__body-item--tooltip">
+                                <div role="tooltip" aria-label="Для уборки мы используем ваш пылесос. Если у вас нет пылесоса – не
+                                            переживайте, мы почистим ковры щетками" class="tooltip__wrapper--top"
+                                     tabindex="0">
+                                    <p>Пылесосим ковры <br> и коврики</p>
+                                </div>
+                                <div class="tooltip__wrapper">
+                                    <div class="tooltip__wrapper-icon"></div>
+                                    <div class="tooltip" aria-hidden="true">
+                                        <p>Для уборки мы используем ваш пылесос. Если у вас нет пылесоса – не
+                                            переживайте, мы почистим ковры щетками</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Протираем все доступные поверхности
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Протираем выключатели и дверные ручки
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Чистим зеркала и стеклянные поверхности
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Собираем и выносим мусор
+                            </div>
+                        </div>
+                        <div class="modal__body-list modal__body-list--right">
+                            <p class="modal__body-list__title ">На кухне</p>
+                            <div class="modal__body-item item-before modal__body-item--yes">Моем посуду</div>
+                            <div class="modal__body-item item-before modal__body-item--yes">Моем раковину</div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Протираем столешницу и кухонный фартук
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">Моем снаружи плиту,
+                                холодильник и вытяжку
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Протираем фасады шкафов
+                            </div>
+                        </div>
+                        <div class="modal__body-list">
+                            <p class="modal__body-list__title">В ванной</p>
+                            <div class="modal__body-item item-before modal__body-item--yes">Чистим унитаз</div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Моем ванну, душевую кабину
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">Моем раковину</div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Протираем все доступные поверхности
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Моем пол и протираем плинтусы
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Чистим зеркала и стеклянные поверхности
+                            </div>
+                        </div>
+                        <div class="modal__body-list modal__body-list--right">
+                            <p class="modal__body-list__title">А что с вещами?</p>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Меняем постельное бельё и застилаем кровать
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Одежду аккуратно складываем
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--yes">
+                                Расставляем обувь
+                            </div>
+                        </div>
+                        <div class="modal__body-list modal__body-list--no">
+                            <p class="modal__body-list__title modal__body-list__title--no">
+                                Что не входит в поддерживающую уборку:</p>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не поднимаем и не двигаем тяжёлые предметы и мебель
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не делаем химическую чистку ковров
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не чистим жалюзи и шторы
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не прибираем в кладовке
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не моем стены
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не удаляем глубокие пятна и не чистим паром
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не применяем биологически опасные материалы
+                            </div>
+                            <div class="modal__body-item item-before modal__body-item--no">
+                                Не делаем уборку в труднодоступных местах
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="spring-cleaning" id="general">
+        <div class="container">
+            <div class="spring-cleaning__wrapper">
+                <h2 class="spring-cleaning__title title">Генеральная уборка</h2>
+                <p class="spring-cleaning__text text">Если в квартире очень грязно, мы пришлём команду клинеров с
+                    техникой и стремянкой. Подходит, если в квартире был ремонт, сменились жильцы или просто
+                    очень давно не убирались</p>
+                <a href="general-cleaning.html" class="spring-cleaning__btn">Про уборку командой</a>
+            </div>
+        </div>
+    </section>
+    <section class="window-cleaning" id="window">
+        <div class="container">
+            <div class="window-cleaning__wrapper">
+                <h2 class="window-cleaning__title title">Моем окна c применением профессиональных средств и техники</h2>
+                <p class="window-cleaning__text">Удалим грязь из механизмов, резинок, межрамного пространства</p>
+                <p class="window-cleaning__text window-cleaning__text--price">Стоимость <strong>от 300 рублей</strong>
+                </p>
+                <button class="modal-btn btn--green" aria-expanded="false" aria-haspopup="true" data-modal="two">
+                    Полный список услуг
+                </button>
+                <div id="myModaltwo" aria-label="полный список услуг" class="modal window-cleaning__popup">
+                    <!-- Modal content -->
+                    <div class="modal-content modal-content__window-cleaning">
+                        <div class="modal-header">
+                            <h3 class="modal__header-title--window modal__header-title">Дополнительные услуги:</h3>
+                            <button class="close"><span class="visually-hidden">Закрыть окно</span></button>
+                        </div>
+                        <div class="modal__body">
+                            <ul class="window__services-list ">
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Помоем окна изнутри</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon">
+                                        </div>
+                                        <div class="tooltip">
+                                            <p>Помоем окна внутри. Очистим рамы, откосы и подоконники</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">
+                                            Помоем окна изнутри<br> на балконе</p>
+                                        <p class="window__services-price">500 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon"></div>
+                                        <div class="tooltip">
+                                            <p> Помоем балконное остекление внутри. Очистим рамы, откосы и
+                                                подоконники</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Уберем балкон</p>
+                                        <p class="window__services-price">500 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon"></div>
+                                        <div class="tooltip">
+                                            <p> Помоем балконное остекление внутри. Очистим рамы,откосы и
+                                                подоконники</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Помоем люстру</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon">
+                                        </div>
+                                        <div class="tooltip">
+                                            <p>Протрём пыль со светильника</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text">Заберем и доставим ключи</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Приберем кухонные шкафы</p>
+                                        <p class="window__services-price">800 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon"></div>
+                                        <div class="tooltip">
+                                            <p>Освободим полки, протрем все поверхности изнутри и выбросим продукты,
+                                                которые вам не нужны
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Почистим холодильник</p>
+                                        <p class="window__services-price">450 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon">
+                                        </div>
+                                        <div class="tooltip">
+                                            <p>Освободим полки, удалим загрязнения и выбросим мусор, только заранее
+                                                отключите морозилку</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Помоем духовку</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon">
+                                        </div>
+                                        <div class="tooltip">
+                                            <p>Удалим жир и грязь изнутри, очистим и протрем духовой шкаф</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text "> Погладим вещи</p>
+                                        <p class="window__services-price">600 руб. 1 час</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon">
+                                        </div>
+                                        <div class="tooltip">
+                                            <p>Тщательно выгладим одежду и белье, если вы их оставите на гладильной
+                                                доске</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Помоем микроволновку</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon"></div>
+                                        <div class="tooltip">
+                                            <p>Удалим жир и грязь изнутри, очистим поддон,протрем микроволновую печь</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Доставим ключи</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Уберемся в гардеробной</p>
+                                        <p class="window__services-price">600 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon"></div>
+                                        <div class="tooltip">
+                                            <p>Протрем полки и все доступные поверхности, расставим и разложим вещи</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="window__services-item">
+                                    <div class="tooltip__wrapper-top">
+                                        <p class="window__services-text ">Помоем лоток питомца</p>
+                                        <p class="window__services-price">300 руб.</p>
+                                    </div>
+                                    <div class="tooltip__wrapper">
+                                        <div class="tooltip__wrapper-icon"></div>
+                                        <div class="tooltip">
+                                            <p>Выбросим старый наполнитель, помоем лоток и вокруг него, наполним свежим
+                                                наполнителем
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="performers">
+        <div class="container">
+            <div class="performers__wrapper">
+                <h2 class="performers__title title">Порядок в доме - <br> теперь не ваша забота </h2>
+                <div class="performers__wrapper-content">
+                    <p class="performers__text">
+                        Мы заботимся о безопасности, поэтому тысячи клиентов
+                        доверяют нам свои дома. Оплата уборки помещения, квартиры после выполнения работы клинером</p>
+                    <p class="performers__text">
+                        Вы также можете не волноваться, что в вашем доме или в офисе посторонний человек
+                    </p>
+                    <ul class="performers__list">
+                        <li class="performers__item item-before">наши исполнители проходят отбор и обучение</li>
+                        <li class="performers__item item-before">работа клинеров контролируется отзывами клиентов</li>
+                        <li class="performers__item item-before">наш сотрудник приезжает в назначенное время со всем
+                            необходимым
+                        </li>
+                        <li class="performers__item item-before">
+                            стандартный план уборки квартиры можно адаптировать:
+                            добавить дополнительные услуги к любому заказу
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="faq__title">Часто задоваемые вопросы</h2>
+            <div class="faq__wrapper">
+                <ul>
+                    <li class="faq-item ">
+                        <button class="faq-item__title" id="accordion0id" aria-expanded="false" aria-controls="sect0">
+                            Выполняете ли вы заказы в частных домах, коттеджах, таунхаусах и на дачах?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion0id" id="sect0">
+                            <p>Конечно, к вам приедут сразу несколько клинеров с инвентарём и запасом чистящих средств.
+                                Менеджер выяснит у вас особенности дома, поставит задачу команде и проследит за её
+                                работой. Звоните нам по номеру +7 495 000-00-00</p>
+                        </div>
+                    </li>
+                    <li class="faq-item  ">
+                        <button class="faq-item__title" id="accordion1id" aria-expanded="false" aria-controls="sect1">
+                            Могу ли я заказать уборку квартиры и уйти по делам, когда приедет клинер?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion1id" id="sect1">
+                            <p>Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам.
+                                Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете,
+                                заберёт у вас ключи и потом привезёт их обратно.
+                                К стоимости в этом случае добавится небольшая сумма.</p>
+                        </div>
+                    </li>
+                    <li class="faq-item">
+                        <button class="faq-item__title" id="accordion2id" aria-expanded="false" aria-controls="sect2">
+                            Вы сможете помыть потолки, жалюзи и всё, до чего сложно дотянуться?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion2id" id="sect2">
+                            <p>Уборка квартир в Самаре означает, что грязь дома регулярно приходится вычищать из
+                                труднодоступных мест. Приготовьте стремянку, и мы протрём доступные вертикальные и
+                                горизонтальные поверхности даже на высоте. Потолки, жалюзи и стены мы не моем — в рюкзак
+                                клинера не поместится нужный инвентар</p>
+                        </div>
+                    </li>
+                    <li class="faq-item">
+                        <button class="faq-item__title" id="accordion3id" aria-expanded="false" aria-controls="sect3">
+                            Что делать, если клинер что-то сломал или после уборки или мытья окон в квартире что-то
+                            пропало?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion3id" id="sect3">
+                            <p>Пришлите фотографии и как можно более подробно опишите случившееся
+                                для службы поддержки в любом из мессенджеров — их можно найти на главной странице внизу
+                                <br>
+                                <br>
+                                Не переживайте! Мы уверены в своих исполнителях, но на всякий случай у нас есть
+                                собственный страховой фонд — чтобы иметь возможность быстро возместить ущерб. Также при
+                                необходимости подключится наша служба безопасности.</p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="btn work__btn button__faq">Еще вопросы</button>
+                <ul class="faq__list-all">
+                    <li class="faq-item">
+                        <button class="faq-item__title" id="accordion4id" aria-expanded="false" aria-controls="sect4">
+                            Что делать, если мне нужна уборка генеральная, после ремонта, офиса или химчистка мягкой
+                            мебели, ковров?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion4id" id="sect4">
+                            <p>Просто закажите уборку или химчистку на странице генеральных уборок.
+                                <br>
+                                <br>
+                                К вам приедет целая команда клинеров с менеджером, которые привезут с собой стремянки,
+                                парогенератор, моющий пылесос Kärcher и профессиональные чистящие средства.
+                                <br>
+                                <br>
+                                Менеджер рассчитает точную стоимость и продолжительность уборки на месте, и команда
+                                приступит к работе после вашего согласия.</p>
+                        </div>
+                    </li>
+                    <li class="faq-item">
+                        <button class="faq-item__title" id="accordion5id" aria-expanded="false" aria-controls="sect5">
+                            Помоете ли вы окна у меня на балконе?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion5id" id="sect5">
+                            <p>Конечно! Просто уточните у менеджера по телефону нужное количество окон/балконов
+                                <br>
+                                <br>
+                                У нас фиксированная цена - 1490 руб и не важно сколько окон у вас дома. Если вам нужно
+                                помыть еще балкон, то цена будет 2090 руб.</p>
+                        </div>
+                    </li>
+                    <li class="faq-item">
+                        <button class="faq-item__title" id="accordion6id" aria-expanded="false" aria-controls="sect6">
+                            С какой химией и инвентарём вы приезжаете на поддерживающую уборку и что нужно подготовить?
+                        </button>
+                        <div class="faq__text" role="region" aria-labelledby="accordion6id" id="sect6">
+                            <p>Мы привозим с собой весь необходимый инвентарь: салфетки, мопы, швабры и телескопические
+                                штанги. Кроме пылесоса — он слишком тяжёлый. Если вы хотите, чтобы мы пропылесосили,
+                                подготовьте пылесос заранее. Не переживайте — в отсутствии пылесоса мы почистим ковры
+                                специальной перчаткой и щётками.
+                                <br>
+                                <br>
+                                Из химии мы используем не агрессивные профессиональные средства: низкощелочные и
+                                биоразлагаемые. Все клинеры отлично знают, как безопасно использовать средства и через
+                                сколько времени необходимо смывать их. Возможность проявления аллергической реакции на
+                                них крайне мала. Также вы можете предложить клинеру использовать ваши средства.
+                                <br>
+                                <br>
+                                <strong>Несколько советов:</strong>
+                                <br>
+                                <br>
+                                Если вы заказали дополнительную опцию Мытьё холодильника и хотите, чтобы мы помыли ещё и
+                                морозильную камеру, то не забудьте разморозить её.
+                                <br>
+                                А если вы заказали дополнительную опцию Мытьё люстры, Мытьё окон или просто хотите,
+                                чтобы клинер помыл поверхности, которые находятся выше уровня вытянутой руки,
+                                достаньте из кладовки стремянку и поставьте на видное место.</p>
+                        </div>
+                    </li>
+                    <li class="faq__questions">
+                        <p class="faq__questions--text">Если вы не нашли ответа на интересующий вас вопрос, позвоните
+                            менеджеру на номер</p>
+                        <a href="tel:+7(927)7382691" class="faq__questions-tel">+7 (927)-738-26-91</a>
+                        <p class=" faq__questions-text--green">Он вас бесплатно проконсультирует</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <section class="order-cleaning">
+        <div class="container">
+            <h2 class="order-cleaning__title title">Заказать уборку квартир в Самаре</h2>
+            <div class="order-cleaning__form">
+                <form action="mail.php" method="post" class="form form-select--bottom" enctype="multipart/form-data">
+                    <input type="hidden" name="project_name" value="Cleaning">
+                    <input type="hidden" name="admin_email" value="info@livecleaning.ru">
+                    <input type="hidden" name="form_subject" value="footer form">
+                    <label for="room4" class="visually-hidden">Выберите количество комнат</label>
+                    <select id="room4" name="Комнаты" class="form__select form-select-two" data-name="room3">
+                        <option value="0" selected>кол-во комнат</option>
+                        <option value="1-комната" data-calc-value="1490">1-комната</option>
+                        <option value="2-комнаты" data-calc-value="2090">2-комнаты</option>
+                        <option value="3-комнаты" data-calc-value="2490">3-комнаты</option>
+                        <option value="4-комнаты" data-calc-value="3090">4-комнаты</option>
+                        <option value="5-комнат" data-calc-value="3990">5-комнат</option>
+                    </select>
+
+                    <label for="room5" class="visually-hidden">Выберите количество комнат</label>
+                    <select id="room5" name="Сан-Узлы" class="form__select form-select-two" data-name="room4">
+                        <option value="0" selected>кол-во сан узлов</option>
+                        <option value="1 санузел">1-санузел</option>
+                        <option value="2 санузла" data-calc-value="300">1 санузла</option>
+                        <option value="3 санузла" data-calc-value="600">2 санузла</option>
+                        <option value="4 санузла" data-calc-value="900">3 санузлов</option>
+                        <option value="5 санузлов" data-calc-value="1200">4 санузла</option>
+                        <option value="6 санузлов" data-calc-value="1500">5 санузлов</option>
+                    </select>
+                    <label for="tel2" class="visually-hidden">Выберите количество комнат</label>
+                    <input id="tel2" name="phone" class="form-select__inp form__select" type="tel" placeholder="+7 (927) 60301447">
+                    <p class="form-select__price "> 0 руб. <sup>*</sup></p>
+                    <button type="submit" class="services__btn btn"> Заказать уборку</button>
+                    <p class="form-select--consent">Я согласен с <a href="">условием передачи данных</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__logo"><img src="dist/img/photo.jpg" alt=""></div>
+            <div class="footer__wrapper-left">
+                <div class="footer__political">
+                    <a href="#" class="footer__political-link">
+                        Политика конфиденциальности <br> © 2020
+                    </a>
+                </div>
+                <div class="footer__social-wrapper">
+                    <span>соц.сети:</span>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a href="instagram.com" aria-label="вотсапп">
+                                <img src="dist/img/icons-whatsapp.png" alt="вотсапп">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="instagram.com" aria-label="инстаграм">
+                                <img src="dist/img/iconsinstagram.png" alt="инстаграмм">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="instagram.com" aria-label="вконтакте">
+                                <img src="dist/img/icons-vk.png" alt="вконтакте">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__contacts">
+                <div class="contacts">
+                    <a class="contacts__menu--link contacts__city contacts__city--footer ">г.Самара</a>
+                    <a href="tel:+79277382691" class="contacts__menu--link contacts__phone contacts__city--footer">
+                        +7 (927)-738-26-91</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer__copyright">
+        <p><a href="">Made on @andreyivannikov</a></p>
+    </div>
+</footer>
+
+
+<div class="modal-window">
+    <div class="container">
+        <form action="mail.php" class="form form-select--fixed" method="post">
+            <input type="hidden" name="project_name" value="Cleaning">
+            <input type="hidden" name="admin_email" value="info@livecleaning.ru">
+            <input type="hidden" name="form_subject" value="Form Subject">
+            <label for="room6" class="visually-hidden">Выберите количество комнат</label>
+            <select id="room6" name="room5" class="form__select form-select-two" data-name="room5">
+                <option value="0" selected>кол-во комнат</option>
+                <option value="1 санузел" data-calc-value="490">1-комната</option>
+                <option value="2 санузла" data-calc-value="490">2-комната</option>
+                <option value="3 санузла" data-calc-value="490">3-комната</option>
+                <option value="4 санузлов" data-calc-value="1490">4-комната</option>
+            </select>
+            <label for="room7" class="visually-hidden">Выберите количество сан-узлов</label>
+            <select id="room7" name="room6" class="form__select form-select-two" data-name="room6">
+                <option value="0" selected>кол-во сан узлов</option>
+                <option value="1 санузел">1-санузел</option>
+                <option value="2 санузла" data-calc-value="30">2 санузла</option>
+                <option value="3 санузла" data-calc-value="60">3 санузла</option>
+                <option value="4 санузлов" data-calc-value="90">4 санузлов</option>
+            </select>
+            <label for="tel" class="visually-hidden">Телефон:</label>
+            <input id="tel" class="form-select__inp form__select" name="phone" type="tel"
+                   placeholder="+7 (927) 6031447">
+            <button type="submit" class="services__btn btn"> Рассчитать стоимость</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="dist/js/script.js"></script>
+<script src="dist/js/index.js"></script>
+<script src="aj.js"></script>
+
+
+</body>
+</html>
